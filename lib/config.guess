@@ -192,6 +192,9 @@ Linux|GNU|GNU/*)
 		LIBC=gnu
 	fi
 	;;
+HarmonyOS)
+	LIBC=musl
+	;;
 esac
 
 # Note: order is significant - the case branches are not exclusive.
@@ -1603,6 +1606,9 @@ EOF
     *:[Ii]ronclad:*:*)
 	GUESS=$UNAME_MACHINE-unknown-ironclad-mlibc
 	;;
+    *:HarmonyOS:*:*)
+    GUESS=$UNAME_MACHINE-linux-ohos
+    ;;
 esac
 
 # Do we have a guess based on uname results?
